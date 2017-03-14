@@ -3,154 +3,206 @@
 
   <head>
     <title>ArrepleGATs</title>
+
     <style>
-    .titol {
-      justify-content:center;
-      font-family: calibri;
-    }
-    li {
-      float:left;
-      list-style-type: none;
-      display: block;
-    }
-    li a:link, li a:visited {
-      border:2px solid purple;
-      color:white;
-      background-color:purple;
-      margin:2px;
-      font-family:verdana;
-      text-decoration:none;
-      text-align:center;
-      padding:10px 20px;
+      header {
+        justify-content:center;
+        font-family: calibri;
+      }
+
+      nav {
+        #float:left;
+        list-style-type: none;
+        #display: block;
+      }
+
+      nav a:link, nav a:visited {
+        border:2px solid purple;
+        color:white;
+        background-color:purple;
+        margin:0px;
+        font-family:verdana;
+        text-decoration:none;
+        text-align:center;
+        padding:10px 20px;
+      }
+
+      nav a:hover, nav a:active {
+        border:2px solid purple;
+        color:purple;
+        background-color:white;
+      }
+
+      input[type=text], select {
+        width:180px;
+        padding: 2px;
+        margin:10px 0;
+        font-family: verdana;
+        border: 1px solid purple;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      input[type=email], input[type=list],input[type=number] select {
+        width:180px;
+        padding: 2px;
+        margin:0px 0;
+        font-family: verdana;
+        border: 1px solid purple;
+        border-radius: 5px;
+      }
+
+      .formulari {
+        font-family: verdana;
+        font-size: 13px;
+        margin: 0px;
+      }
       
-    }
-    li a:hover, li a:active {
-      border:2px solid purple;
-      color:purple;
-      background-color:white;
-    }
-    input[type=text], select {
-      width:180px;
-      padding: 2px;
-      margin:10px 0;
-      font-family: verdana;
-      border: 1px solid purple;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-    input[type=email], input[type=list],input[type=number] select {
-      width:180px;
-      padding: 2px;
-      margin:0px 0;
-      font-family: verdana;
-      border: 1px solid purple;
-      border-radius: 5px;
+      .gat {
+        border: 1px solid purple;
+        border-radius: 5px;
+        margin: 20px;
+        padding: 15px;
+        display: flex;
+      }
+      #dreta {
+        float: right;
+      }
+      #esquerra {
+        margin-right: 40px;
+        float:left;
+        width: 60%;
+      }
 
-    }
-    .formulari {
-      font-family: verdana;
-      font-size: 13px;
-      margin: 3px;
-    }
+      #container {
+        display: flex;
+      }
+
+      div.gat h3 {
+        text-align: center;
+
+      }
+      div.gat img {
+        float:left;
+        
+      }
+      div.descripcio {
+        float:right;
+      }
+
+      footer {
+        text-align: center;
+      }
     </style>
-
   </head>
-  <body>
-    <div class="container">
 
-      <header class="titol">
+  <body>
+
+    <header class="titol">
       <h1>ArrepleGATs</h1>
       <h3>Espai d'acollida i adopció de gats</h3>
       <hr>
-      </header>
+    </header>
+    <br>
+  
+    <!-- <ul> 
+      <li><a href="#" target="_blank">Home</a></li>
+      <li><a href="#" target="_blank">About</a></li>
+      <li><a href="#" target="_blank">Contact</a></li>
+      <li><a href="#" target="_blank">F.A.Q</a></li>
+    </ul> <br><br><br> -->
+    <nav>
+      <a href="#" target="_blank">Home</a>
+      <a href="#" target="_blank">About</a>
+      <a href="#" target="_blank">Contact</a>
+      <a href="#" target="_blank">F.A.Q</a>
+    </nav>
 
-      <ul>
-        <li><a href="#" target="_blank">Home</a></li>
-        <li><a href="#" target="_blank">About</a></li>
-        <li><a href="#" target="_blank">Contact</a></li>
-        <li><a href="#" target="_blank">F.A.Q</a></li>
-      </ul> 
-
-      <article>
-        <div class="gats">
-          <h3>Lluna</h3>
+  <div id="container">
+    <div id="esquerra">
+      
+      <div class="gat">
+        <h3>Lluna</h3><br>
+        <div class="descripcio">
           <h5>Sólo ella sabe lo que pasó</h5>
-          <p>De Lluna, esta preciosa gata atigrada, no sabemos mucho de su vida anterior, pero lo que sí podemos asegurar es que es una gata buena, tranquila y cariñosa pero a la vez independiente.</p>
-          <img src="../photo/Lluna.jpg" alt="Lluna" style="width:300px;heigth:300px;"></img>
+          <p> De Lluna, esta preciosa gata atigrada, no sabemos mucho de su vida anterior, pero lo que sí podemos asegurar es que es una gata buena, tranquila y cariñosa pero a la vez independiente.</p>
         </div>
+        <img src="../photo/Lluna.jpg" alt="Lluna" style="width:300px;"></img>
 
-        <div class="gats">
-          <h3>Teo</h3>
+      </div>
+
+      <div class="gat">
+        <h3>Teo</h3>
+        <div class="descripcio">
           <h5>Sigue esperando...</h5>
           <p>Teo es un gato casero que llegó al refugio muy joven. Acostumbrado a la vida de un hogar no lo pasa nada bien en la Protectora compartiendo espacio con tantos gatos.
-Él es un gato bueno, sociable y cariñoso. Siempre es uno de los primeros gatos en venir a saludar y en busca de mimos. Y como Teo lo tiene todo, también tiene ese carácter felino y por eso necesitaría una familia con experiencia en gatos.</p>
-          <img src="../photo/Teo.jpg" alt="Teo" style="width:300px;heigth:300px;"></img>
+          Él es un gato bueno, sociable y cariñoso. Siempre es uno de los primeros gatos en venir a saludar y en busca de mimos. Y como Teo lo tiene todo, también tiene ese carácter felino y por eso necesitaría una familia con experiencia en gatos.</p>
         </div>
+        <img src="../photo/Teo.jpg" alt="Teo" style="width:300px;"></img>
+      </div>
 
-        <div class="gats">
-          <h3>Nácar</h3>
+      <div class="gat">
+        <h3>Nácar</h3>
+        <div class="descripcio">
           <h5>Una gata peculiar</h5>
-          <p>Nácar lleva ya unos dos años con nosotros. Es una gata muy bonita y cariñosa pero a la vez, independiente y con algo de carácter.
-Necesita una familia que entienda de gatos, y que le deje su espacio cuando lo necesite. Aunque cada día que pasa la vemos más cariñosa y va en busca del contacto con la gente.</p>
-          <img src="../photo/Nacar.png" alt="Nácar" style="width:300px;heigth:300px;"></img>
+          <p> Nácar lleva ya unos dos años con nosotros. Es una gata muy bonita y cariñosa pero a la vez, independiente y con algo de carácter.
+          Necesita una familia que entienda de gatos, y que le deje su espacio cuando lo necesite. Aunque cada día que pasa la vemos más cariñosa y va en busca del contacto con la gente.</p>
         </div>
-      </article>
+        <img src="../photo/Nacar.png" alt="Nácar" style="width:300px;"></img>
+      </div>
+    </div>
 
-      <aside>
-          <form class="formulari" action="/action_page.php" method="post">
-          <fieldset>
-            <legend>Vols afegir un nou gat al refugi?</legend>
-            Introdueix un email de contacte:
-            <input type="email" name="email" required><br>
-            Nom del gat:
-            <input type="text" name="nom"><br>
-            Sexe:
-            <input type="radio" name="sexe" value="Femella"> Femella
-            <input type="radio" name="sexe" value="Mascle"> Mascle <br>
-            Esterilitzat:
-            <input type="radio" name="esteril" value="Si"> Si
-            <input type="radio" name="esteril" value="No"> No <br>
-            Vacunes: <br>
-            <input type="checkbox" name="vacuna" value="trival"> Trivalent(obligatòria) <br>
-            <input type="checkbox" name="vacuna" value="leucem"> Leucèmia(obligatòria) <br>
-            <input type="checkbox" name="vacuna" value="rabia"> Ràbia <br>
-            <input type="checkbox" name="vacuna" value="fiv"> Immunodeficiència felina <br>
-            <input type="checkbox" name="vacuna" value="bordet"> Bordetella <br>
-            <input type="checkbox" name="vacuna" value="peri"> PIV <br>
-            Color:
-            <input list="colors">
-            <datalist id="colors">
-              <option value="Blanc">
-              <option value="Negre">
-              <option value="Gris">
-              <option value="Taronja">
-              <option value="Atigrat">
-              <option value="Bicolor">
-              <option value="Tricolor">
-              <option value="Altre">
-            </datalist> <br>
-            Edat
-            <input type="number" name="edat" min="1" max="15" step="1"><br>
-            Mida:
-            <input type="range" name="mida" min="1" max="3" step="1"><br>
-            Comentaris:<br>
-            <input type="textarea" name="coment" rows="6" cols="30" placeholder="Descriu el teu gat aquí" maxlength="200"></textarea><br>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Restablir">
-            <button type="button" onclick="alert('Els canvis no es desaran')"> Borrar </button>
-
+    <div id="dreta">
+      <form class="formulari" action="/action_page.php" method="post">
+        <fieldset>
+          <legend>Vols afegir un nou gat al refugi?</legend>
+          Introdueix un email de contacte:
+          <input type="email" name="email" required><br>
+          Nom del gat:
+          <input type="text" name="nom"><br>
+          Sexe:
+          <input type="radio" name="sexe" value="Femella"> Femella
+          <input type="radio" name="sexe" value="Mascle"> Mascle <br>
+          Esterilitzat:
+          <input type="radio" name="esteril" value="Si"> Si
+          <input type="radio" name="esteril" value="No"> No <br>
+          Vacunes: <br>
+          <input type="checkbox" name="vacuna" value="trival"> Trivalent(obligatòria) <br>
+          <input type="checkbox" name="vacuna" value="leucem"> Leucèmia(obligatòria) <br>
+          <input type="checkbox" name="vacuna" value="rabia"> Ràbia <br>
+          <input type="checkbox" name="vacuna" value="fiv"> Immunodeficiència felina <br>
+          <input type="checkbox" name="vacuna" value="bordet"> Bordetella <br>
+          <input type="checkbox" name="vacuna" value="peri"> PIV <br>
+          Color:
+          <input list="colors">
+          <datalist id="colors">
+          <option value="Blanc">
+          <option value="Negre">
+          <option value="Gris">
+          <option value="Taronja">
+          <option value="Atigrat">
+          <option value="Bicolor">
+          <option value="Tricolor">
+          <option value="Altre">
+          </datalist> <br>
+          Edat
+          <input type="number" name="edat" min="1" max="15" step="1"><br>
+          Mida:
+          <input type="range" name="mida" min="1" max="3" step="1"><br>
+          Comentaris:<br>
+          <input type="textarea" name="coment" rows="6" cols="30" placeholder="Descriu el teu gat aquí" maxlength="200"></textarea><br>
+          <input type="submit" value="Enviar">
+          <input type="reset" value="Restablir">
+          <button type="button" onclick="alert('Els canvis no es desaran')"> Borrar </button>
 
         </fieldset>
-
-
-
-        </form>
-      </aside>
-
-      <footer>
-        <p>Copyright &#169; - ArrepleGATs </p>
-      </footer>
+      </form>
     </div>
+  </div>
+
+    <footer>
+      <p>Copyright &#169; - ArrepleGATs </p>
+    </footer>
   </body>
 
 </html>
