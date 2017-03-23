@@ -34,11 +34,7 @@ header h4 {
     margin-top:0px;
     margin-bottom:5px;
 }
-footer p {
-    //font-family: 'Lato', sans-serif;
-    font-size: 1.5em;
-    margin:0px; 
-}
+
 .nav a {
     margin:0px;
     font-family:verdana;
@@ -83,6 +79,11 @@ footer {
     background-color: slateblue;
 }
 
+footer p {
+    //font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    margin:0px; 
+}
 	/* For mobile phones: */
 [class*="col-"] {
     width: 100%;
