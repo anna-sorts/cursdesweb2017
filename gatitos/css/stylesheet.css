@@ -47,23 +47,24 @@ footer p {
     padding:10px 20px;
 }
 /* Falta formateig de nav, per hover i tal */
-div.gat {
+span.gat {
     border: 1px solid honeydew; 
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
     padding:20px;
     background-color: honeydew;
+    display: block;
 }
-div.gat h3 {
+span.gat h3 {
     text-align: center;
 }
-div.gat img {
+span.gat img {
     position: relative;
     border-radius: 5px;
 }
-div.descripcio {
-    float:right;
+span.gat .descripcio {
+    //float:right;
     top:10px;
 }
 .formulari {

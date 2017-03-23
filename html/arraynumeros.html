@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function myMessage() {
+			var text = "";
+			var successio = "";
+			var i;
+			var numero = [3, 8, 0, 1, 9, 2, 6, 5, 7, 4];
+			for (i = 0; i < numero.length; i++) {
+				successio += numero[i] + "-";
+				if (numero[i] == 2) {
+					text += "L'index que ocupa es " + i;
+					break;
+				}
+			}
+			alert(successio);
+			//document.getElementById("demo").innerHTML = text;
+		}
+	</script>
+</head>
+<body>
+	<p onload="myMessage()">hola</p>
+</body>
+</html>
