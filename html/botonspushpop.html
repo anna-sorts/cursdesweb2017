@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Botoncillos</title>
+</head>
+<body>
+	<p>The pop method returnes the removed item.</p>
+
+	<button id="button1" onclick="de1a2()">Passa a 2</button>
+	<button id="button2" onclick="de2a1()">Passa a 1</button><br><br>
+	<span>Llista 1:<span>
+	<span id="demo1"></span><br><br>
+	<span>Llista 2:<span>
+	<span id="demo2"></span>
+
+	<script>
+		var fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+		var fruits2 = [];
+
+		document.getElementById("demo1").innerHTML = fruits1;
+		document.getElementById("demo2").innerHTML = fruits2;
+
+		function de1a2() {
+
+			if (fruits1.length>0) {
+				fruits2.push(fruits1.pop());
+			}
+			document.getElementById("demo1").innerHTML = fruits1;
+			document.getElementById("demo2").innerHTML = fruits2;
+			
+		    if (fruits1.length<=0) {
+				document.getElementById("button1").disabled= true;
+				document.getElementById("button2").disabled= false;
+			}
+			else {
+				document.getElementById("button1").disabled= false;
+				document.getElementById("button2").disabled= false; 
+			}
+			
+		}
+		function de2a1() {
+
+			if (fruits2.length>0) {
+				fruits1.push(fruits2.pop());
+		    }
+			document.getElementById("demo1").innerHTML = fruits1;
+			document.getElementById("demo2").innerHTML = fruits2;
+		    
+		    if (fruits2.length<=0) {
+				document.getElementById("button2").disabled= true;
+				document.getElementById("button1").disabled= false;
+			}
+			else {
+				document.getElementById("button2").disabled= false;
+				document.getElementById("button1").disabled= false;  
+			}
+		}
+	</script>
+
+</body>
+</html>
