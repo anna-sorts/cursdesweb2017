@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  #container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+  }
+  #animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    color: white;
+    font-size: 0.8em;
+    background-color: red;
+  }
+
+  }
+  </style>
+
+<body>
+
+<!-- <p>
+  <button onclick="myMoveDown()">Ves avall!</button>
+</p> 
+<p>
+  <button onclick="myMoveUp()">Ves amunt!</button>
+</p>  -->
+
+<p>
+  <button onclick="myMove(350,0)">Mou-te avall!</button>
+  <button onclick="myMove(0,1)">Mou-te amunt!</button>
+</p>
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+
+
+<script>
+function myMoveDown() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } 
+    else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+    if (pos > 175) {elem.style.backgroundColor = "blue"}
+    document.getElementById("animate").innerHTML = "("+ pos + "," + pos + ")";
+  }
+}
+function myMove(desti,sentit) { // sentit 0 baixa, 1 puja
+  var elem = document.getElementById("animate");  
+  if (sentit == 0) {pos = 0;} 
+  else {pos = 350;} 
+  
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == desti) {
+    
+      clearInterval(id);
+    } 
+    else {
+      if (sentit == 0) {pos++;} 
+      else {pos--;} 
+
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+    //if (pos > (desti/2)) {elem.style.backgroundColor = "blue"}
+    document.getElementById("animate").innerHTML = "("+ pos + "," + pos + ")";
+  }
+}
+
+function myMoveUp() {
+  var elem = document.getElementById("animate");   
+  var pos = 350;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 0) {
+      clearInterval(id);
+    } 
+    else {
+      pos--; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+    if (pos < 175) {elem.style.backgroundColor = "red"}
+    document.getElementById("animate").innerHTML = "("+ pos + "," + pos + ")";
+  }
+}
+
+
+</script>
+
+</body>
+</html>

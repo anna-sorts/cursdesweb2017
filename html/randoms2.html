@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="" content="viewport" width="device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+	<title>Randoms-formatat</title>
+
+</head>
+<body class="w3-container w3-lightgray">
+	<h1>Llista d'elements aleatoris</h1>
+	<button class="w3-button w3-blue" onclick="aleatori()">Aleatori</button><br>
+	<div 	class="w3-badge w3-large" id="elementRandom"></div>
+	<span 	class="w3-badge w3-blue" id="minim"> </span>
+	<span 	class="w3-badge w3-blue" id="maxim"> </span><br>
+	<h3 	class="w3-darkgray">Llista d'elements aleatoris</h3>
+	<div 	class="w3-panel w3-paleblue" id="llistaAleatoris"> </div><br>
+	<span 	class="w3-badge" id="intents"> </span>
+	<h3 	class="w3-darkgray">Hora de cada intent</h3>
+	<div 	class="w3-panel w3-paleblue" id="horaIntent"> </div>
+	<h3 	class="w3-darkgray">Comptador</h3>	
+	<div 	class="w3-panel w3-paleblue" id="comptador" style="padding:3px;"> </div>
+	<h3 	class="w3-darkgray">Llista reversa d'elements</h3>	
+	<!-- <div class="w3-panel w3-paleblue" id="..."> </div> -->
+	<span 	class="w3-purple" id="tempsIntents" style="padding:5px;"> </span>
+	
+
+	<script>
+	var alea = [];
+	var ocurrencies = [0,0,0,0,0,0,0,0,0,0];
+	var temps = [];
+	var nombreData = [];
+
+	function leadingZeros(valorTemps) {
+		return ('0' + valorTemps).slice(-2);
+	}
+	function Intent(numero, data) {
+		this.numero = numero;
+		this.data = data;
+		this.toString = function() {
+			return "<span class='w3-row'><span class='w3-col s3'><div class='w3-tag w3-round w3-black w3-center'>" + this.numero + "</div>-" + leadingZeros(this.data.getHours()) + ":" + leadingZeros(this.data.getMinutes()) + ":" + leadingZeros(this.data.getSeconds()) + "</span></span>";
+		}
+	}
+	Intent.prototype.toString = function() {
+		return this.numero + " - " + this.data;
+	}
+	
+	
+	function aleatori() {
+	var randomEnter = Math.floor(Math.random() * 10);
+	var ara 		= new Date();
+	//var horaTotal 	= ara.getHours()+ ":" + ara.getMinutes() + ":" + ('0' + ara.getSeconds()).slice(-2);
+	//var intento 	= new Intent(randomEnter, horaTotal);
+	var intento 	= new Intent(randomEnter, ara);
+	maxim = Math.max.apply(null, alea);
+	minim = Math.min.apply(null, alea);
+	ocurrencies[randomEnter] = ocurrencies[randomEnter] + 1;
+
+	alea.unshift(randomEnter);
+	nombreData.unshift(intento);	
+	//temps.unshift(horaTotal);
+	document.getElementById("elementRandom").innerHTML 		= randomEnter;
+	document.getElementById("minim").innerHTML 				= minim;
+	document.getElementById("maxim").innerHTML 				= maxim;
+	document.getElementById("llistaAleatoris").innerHTML	= alea.join(" | ");
+	document.getElementById("intents").innerHTML 			= alea.length + " intents";
+	document.getElementById("horaIntent").innerHTML 		= temps.join(" | ");
+	document.getElementById("comptador").innerHTML 			= ocurrencies.join(" | ");
+	document.getElementById("tempsIntents").innerHTML 		= nombreData.join(" | ");
+	}
+	</script>
+</body>
+</html>

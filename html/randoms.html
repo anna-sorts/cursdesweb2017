@@ -17,27 +17,32 @@
 	<div class="w3-panel w3-purple" id="demo5"></div>
 	<div class="w3-panel w3-yellow" id="demo6"></div>
 	<div class="w3-panel w3-black" id="demo7"></div>
+	<div class="w3-panel w3-orange" id="demo8"></div>
 	
 
 
 	<script>
 	var alea = [];
 	var ocurrencies = [0,0,0,0,0,0,0,0,0,0];
+	var temps = [];
 		function aleatori() {
 			var randomEnter = Math.floor(Math.random() * 10);
 			alea.unshift(randomEnter);
 			maxim =Math.max.apply(null, alea);
 			minim =Math.min.apply(null, alea);
 			ocurrencies[randomEnter] = ocurrencies[randomEnter] + 1;
-
+			var ara = new Date();
+			var horaTotal = ara.getHours()+ ":" + ara.getMinutes() + ":" + ('0' + ara.getSeconds()).slice(-2);
+			temps.unshift(horaTotal);
 			document.getElementById("demo").innerHTML = randomEnter;
-			document.getElementById("demo2").innerHTML = alea;
+			document.getElementById("demo2").innerHTML = alea.join(" | ");;
 			document.getElementById("demo3").innerHTML = alea.length + " intents";
 			document.getElementById("demo4").innerHTML = "El nombre més petit fins ara és " + minim;
 			document.getElementById("demo5").innerHTML = "El nombre més gran fins ara és " + maxim;
 
-			document.getElementById("demo6").innerHTML = ocurrencies;
+			document.getElementById("demo6").innerHTML = ocurrencies.join(" | ");;
 			document.getElementById("demo7").innerHTML = "Nombre de zeros: " + ocurrencies[0] + "<br>" + "Nombre de uns: " + ocurrencies[1] + "<br>" + "Nombre de dosos: " + ocurrencies[2] + "<br>" + "Nombre de tresos: " + ocurrencies[3] + "<br>" + "Nombre de quatres: " + ocurrencies[4] + "<br>" + "Nombre de cincs: " + ocurrencies[5] + "<br>" + "Nombre de sisos: " + ocurrencies[6] + "<br>" + "Nombre de sets " + ocurrencies[7] + "<br>" + "Nombre de vuits " + ocurrencies[8] + "<br>" + "Nombre de nous " + ocurrencies[9];
+			document.getElementById("demo8").innerHTML = temps.join(" | ");
 		}
 	</script>
 </body>

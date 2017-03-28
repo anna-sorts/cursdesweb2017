@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  #container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+  }
+  #animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    color: white;
+    font-size: 0.8em;
+    background-color: red;
+  }
+  #animate2 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    color: white;
+    font-size: 0.8em;
+    background-color: green;
+  }
+  </style>
+
+<body>
+
+<p>
+  <button onclick="myMoveDown()">Ves avall!</button>
+  <button onclick="myMoveDown2()">Ves avall2!</button>
+</p> 
+
+<div id ="container">
+  <div id ="animate"></div>
+  <div id ="animate2"></div>
+</div>
+
+<p>
+  <button onclick="myMoveUp()">Ves amunt!</button>
+  <button onclick="myMoveUp2()">Ves amunt2!</button>
+</p> 
+
+<script>
+function myMoveDown() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } 
+    else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+    if (pos > 175) {elem.style.backgroundColor = "blue"}
+    document.getElementById("animate").innerHTML = "("+ pos + "," + pos + ")";
+  }
+}
+
+function myMoveUp() {
+  var elem = document.getElementById("animate");   
+  var pos = 350;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 0) {
+      clearInterval(id);
+    } 
+    else {
+      pos--; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+    if (pos < 175) {elem.style.backgroundColor = "red"}
+    document.getElementById("animate").innerHTML = "("+ pos + "," + pos + ")";
+  }
+}
+
+function myMoveDown2() {
+  var elem2 = document.getElementById("animate2");   
+  var posX = 350;
+  var posY = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (posX == 0) {
+      clearInterval(id);
+    } 
+    else {
+      posX--;
+      posY++;
+      elem2.style.top = posX + 'px'; 
+      elem2.style.left = posY + 'px'; 
+    }
+    if (posX < 175) {elem2.style.backgroundColor = "purple"};
+  }
+}
+
+function myMoveUp2() {
+  var elem2 = document.getElementById("animate2");
+  var posX = 0;
+  var posY = 350;   
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (posY == 0) {
+      clearInterval(id);
+    } 
+    else {
+      posX++;
+      posY--; 
+      elem2.style.top = posX + 'px'; 
+      elem2.style.left = posY + 'px'; 
+    }
+    if (posY < 175) {elem2.style.backgroundColor = "green"};
+  }
+}
+
+</script>
+
+</body>
+</html>
