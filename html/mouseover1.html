@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		#capsa {
+			background-color: #F00;
+			padding: 20px;
+			width: 200px;
+		}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	
+	<div id="capsa">Mouse Over me</div>
+	<span id="counter"></span>
+
+<!-- 	<script>
+		counter = 0;
+		document.getElementById("capsa").onmouseover =
+			function () {
+				this.innerHTML = "Thank you";
+				this.style.backgroundColor = "#FF0";
+				document.getElementById("counter").innerHTML = ++ counter;
+			};
+
+		document.getElementById("capsa").onmouseout =
+		function () {
+				this.innerHTML = "Mouse Over me";
+				this.style.backgroundColor = "#F00";
+				
+			};
+	</script> -->
+
+		<script>
+		counter = 0;
+		var elem = document.getElementById("capsa");
+		elem.addEventListener("mouseover", mOver);
+		elem.addEventListener("mouseout", mOut);
+
+		function mOver () {
+			this.innerHTML = "Thank you";
+			this.style.backgroundColor = "#FF0";
+			++ counter;
+			document.getElementById("counter").innerHTML = counter;
+			if (counter > 10) {
+				this.removeEventListener("mouseover", mOver);
+			}
+			
+		}
+		
+		function mOut() {
+			this.innerHTML = "Mouse Over me";
+			this.style.backgroundColor = "#F00";
+			
+		};
+
+		
+		
+		
+
+		
+	</script>
+
+</body>
+</html>

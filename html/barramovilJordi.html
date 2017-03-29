@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 50px;
+  position: relative;
+  background: black;
+}
+#animate {
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p>
+<button id ="bot" onclick="myMove()">go</button>
+<button onclick="stopMov()">stop</button>
+<p id="coord"></p>
+</p> 
+
+
+<div id ="container">
+<div id ="animate"></div>
+</div>
+
+<script>
+function stopMov(){
+  clearInterval(id);
+  clearInterval(id2);
+  document.getElementById("bot").disabled=false;
+}
+function myMove() {
+  document.getElementById("bot").disabled=true;
+  var elem = document.getElementById("animate");
+  var posX = 0;
+  id = setInterval(frame, 3);
+
+  function frame() {
+    if (posX < 390) {
+      elem.style.left = posX+'px';
+      posX++;
+      if(posX==390){
+        clearInterval(id);
+        myMoveInverso();
+      }
+    }
+    }
+}
+function myMoveInverso() {
+  var elem = document.getElementById("animate");
+  var posX = 390;
+  id2 = setInterval(frame, 3);
+  function frame() {
+    if (posX > 0) {
+        elem.style.left = posX+'px';
+        posX--;
+        if(posX == 0){
+          clearInterval(id2);
+          myMove();
+        }
+    }
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Capsa amb moviment aleatori</title>
+	<style>
+	#container {
+	    width: 400px;
+	    height: 400px;
+	    position: relative;
+	    background: yellow;
+  }
+	#animate {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: red;
+  }
+	</style>
+</head>
+
+<body>
+<p>
+  <button onclick="myMove()">Mou-te!</button>
+  
+</p>
+
+<div id ="container">
+  <div id ="animate" onclick="myMove()"></div>
+</div>
+
+<script>
+	var posX = 0;
+	var posY = 0;
+	var elem = document.getElementById("animate"); 
+	function myMove() {
+		var nRandom = Math.ceil(Math.random() * 4);
+		if (nRandom % 2 == 0) {
+			if (posX < 350) {posX = posX + 50};
+		}
+		else {
+			if (posX > 0) {posX = posX - 50};
+		}
+		if (nRandom > 2 ) {
+			if (posY < 350) {posY = posY + 50};
+		}
+		else {
+			if (posY > 0) {posY = posY - 50};
+		}
+		elem.style.left = posX + 'px'; 
+		elem.style.top = posY + 'px';
+	}
+
+</script>
+
+</body>
+</html>

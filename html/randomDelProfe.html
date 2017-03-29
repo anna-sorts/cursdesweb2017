@@ -14,7 +14,8 @@
 <h1>JavaScript Math.random()</h1>
 
 <p>Math.random() returns a random number between 0 and 1:</p>
-<button class="w3-button w3-ripple" onclick="aleatori()">Aleatori</button>
+<p id="demo3"></p>
+<button id="boto" class="w3-button w3-ripple" >Aleatori</button>
 <div id="demo" class="w3-badge w3-jumbo w3-green"></div>
 
 <!-- Nombre d'intents -->
@@ -35,19 +36,28 @@
 
 </div>
 <script>
+var elemB = document.getElementById("boto")
+elemB.addEventListener("click", aleatori);
+document.getElementById("demo3").innerHTML = elemB.offsetLeft + ", "+ elemB.offsetTop;
+
 //Array d'objectes que representen els intents
 var a = [];
+var b = [];
 //Array que mesura les frequencies de cada numero
 var ocurrencies = Array(10).fill(0);
+
 /*Constructor de l'objecte que encapsula les propietats de 
   cada intent */
-function Intent(numero, data){
+function Intent(numero, data, coordX, coordY){
 	this.numero = numero;
 	this.data = data;
+  this.coordX = event.clientX - elemB.offsetLeft;
+  this.coordY = event.clientY - elemB.offsetTop;
+  this.coords = "(" + this.coordX + "," + this.coordY + ")"; 
+
 	//Com volem mostrar l'objecte
 	this.toString = function(){
-    	return "<div class='w3-tag w3-round w3-brown w3-center'>" + this.numero + "</div>-" + leadingZero(this.data.getHours()) + ":" + 
-    	leadingZero(this.data.getMinutes()) + ":" + leadingZero(this.data.getSeconds());
+    	return "<div class='w3-tag w3-round w3-brown w3-center'>" + this.numero + "</div>-" + leadingZero(this.data.getHours()) + ":" + leadingZero(this.data.getMinutes()) + ":" + leadingZero(this.data.getSeconds()) + this.coords;
 	}
 }
 //Com volem mostrar l'objecte estenent el prototype
@@ -55,17 +65,27 @@ function Intent(numero, data){
 {
     return this.numero + "-" + this.data;
 }*/
+
+function compare(a, b) {
+  if (a.numero < b.numero) {return -1}
+  if (a.numero > b.numero) {return 1} 
+  return 0;
+}
 //Hores, minuts i seconds en dues xifres 
 function leadingZero(temps){
 	return ('0' + temps).slice(-2);
 }
 //Crea un intent a cada click
-function aleatori(){
+function aleatori(event){
   var num = Math.floor(Math.random() * 10) + 1;
   var ara = new Date();
-  var inten = new Intent(num, ara);
+  coordX = event.clientX;
+  coordY = event.clientY;
+  var inten = new Intent(num, ara, coordX, coordY);
   //Introduim objecte a l'array pel davant
   a.unshift(inten);
+  //b.unshift(num);
+
   document.getElementById("demo").innerHTML = num;
   //Mostrem l'array d'objectes Intent
   document.getElementById("demo2").innerHTML = a.join(" | ");
@@ -73,7 +93,9 @@ function aleatori(){
   var aux = a.slice();
   ocurrencies[num-1] += 1; 
   //var aux = a;
-  aux.sort(function(a, b){return a-b});
+  aux.sort(compare);
+  //maxim = Math.max.apply(null, b);
+  //minim = Math.min.apply(null, b);
   document.getElementById("min").innerHTML = aux[0];
   document.getElementById("max").innerHTML = aux[aux.length-1];
   document.getElementById("ocurrencies").innerHTML = ocurrencies;
