@@ -19,6 +19,7 @@
     width: 50px;
     height: 50px;
     position: absolute;
+    left: 350px;
     color: white;
     font-size: 0.8em;
     background-color: green;
@@ -46,7 +47,7 @@
 function myMoveDown() {
   var elem = document.getElementById("animate");   
   var pos = 0;
-  var id = setInterval(frame, 5);
+  var id = setInterval(frame, 10);
   function frame() {
     if (pos == 350) {
       clearInterval(id);
@@ -64,7 +65,7 @@ function myMoveDown() {
 function myMoveUp() {
   var elem = document.getElementById("animate");   
   var pos = 350;
-  var id = setInterval(frame, 5);
+  var id = setInterval(frame, 10);
   function frame() {
     if (pos == 0) {
       clearInterval(id);
@@ -83,7 +84,7 @@ function myMoveDown2() {
   var elem2 = document.getElementById("animate2");   
   var posX = 350;
   var posY = 0;
-  var id = setInterval(frame, 5);
+  var id = setInterval(frame, 10);
   function frame() {
     if (posX == 0) {
       clearInterval(id);
@@ -91,10 +92,11 @@ function myMoveDown2() {
     else {
       posX--;
       posY++;
-      elem2.style.top = posX + 'px'; 
-      elem2.style.left = posY + 'px'; 
+      elem2.style.left = posX + 'px';
+      elem2.style.top = posY + 'px';  
     }
     if (posX < 175) {elem2.style.backgroundColor = "purple"};
+    document.getElementById("animate2").innerHTML = "("+ posX + "," + posY + ")";
   }
 }
 
@@ -102,7 +104,7 @@ function myMoveUp2() {
   var elem2 = document.getElementById("animate2");
   var posX = 0;
   var posY = 350;   
-  var id = setInterval(frame, 5);
+  var id = setInterval(frame, 10);
   function frame() {
     if (posY == 0) {
       clearInterval(id);
@@ -110,10 +112,11 @@ function myMoveUp2() {
     else {
       posX++;
       posY--; 
-      elem2.style.top = posX + 'px'; 
-      elem2.style.left = posY + 'px'; 
+      elem2.style.left = posX + 'px';
+      elem2.style.top = posY + 'px';
     }
     if (posY < 175) {elem2.style.backgroundColor = "green"};
+    document.getElementById("animate2").innerHTML = "("+ posX + "," + posY + ")";
   }
 }
 
