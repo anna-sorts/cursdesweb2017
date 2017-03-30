@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="div1">
+	<button onclick="clearInterval(inter)">Atura</button> 
+	<p id="p1">This is a paragraph.</p>
+	<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+//el botó es podia definir dalt però posar la funció aquí, amb l'addEventListener
+function comprova() {
+	if (document.getElementById("p1")) {borraElement();}
+    else {creaElement();}
+}
+
+function creaElement(){
+    var para = document.createElement("p");
+    para.id = "p1";
+	var node = document.createTextNode("This is new."); 
+	para.appendChild(node);  		
+	var parent = document.getElementById("div1");
+	   	
+    parent.appendChild(para); 
+	
+}
+function borraElement() {
+	var parent = document.getElementById("div1");
+	var child = document.getElementById("p1"); 	
+	parent.removeChild(child);
+    }
+
+var inter = setInterval(comprova, 800);
+
+
+</script>
+
+</body>
+</html>

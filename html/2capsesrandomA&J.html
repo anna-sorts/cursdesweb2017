@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Capsa amb moviment aleatori</title>
+	<style>
+	#container {
+	    width: 400px;
+	    height: 400px;
+	    position: relative;
+	    background: palegreen;
+  }
+	#animateRo {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: red;
+  }
+	#animateBl {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: blue;
+  }
+	</style>
+</head>
+
+<body>
+<p>
+  <button id="botoRoig" onclick="pararR()"> Atura capsa roja</button>
+  <button id="botoBlau" onclick="pararB()"> Atura capsa blava</button>
+</p>
+
+<div id ="container">
+  <!-- <div id ="animate" onmouseover="myMove()"></div> -->
+  <div id ="animateRo"></div>
+  <div id ="animateBl"></div>
+</div>
+
+<script>
+	var Xr = 0;
+	var Yr = 0;
+	var Xb = 300;
+	var Yb = 300;
+	paraR=false;
+	paraB=false;
+
+	var elemRo = document.getElementById("animateRo");
+	var elemBl = document.getElementById("animateBl"); 
+	//function myMove() {
+	/*var idR = setInterval(frame(Xr, Yr, elemRo), 300);
+	var idB = setInterval(frame(Xb, Yb, elemBl), 300);
+
+	function frame(posX, posY, elem) {
+		var nRandom = Math.ceil(Math.random() * 4);
+		if (nRandom % 2 == 0) {
+			if (posX < 350) {posX = posX + 50};
+		}
+		else {
+			if (posX > 0) {posX = posX - 50};
+		}
+		if (nRandom > 2 ) {
+			if (posY < 350) {posY = posY + 50};
+		}
+		else {
+			if (posY > 0) {posY = posY - 50};
+		}
+		elem.style.left = posX + 'px'; 
+		elem.style.top = posY + 'px';
+	}
+	//}
+	// function frame() {
+	// 	var nRandom = Math.ceil(Math.random() * 4);
+	// 	if (nRandom % 2 == 0) {
+	// 		if (posXr < 350) {posXr = posXr + 50};
+	// 	}
+	// 	else {
+	// 		if (posXr > 0) {posXr = posXr - 50};
+	// 	}
+	// 	if (nRandom > 2 ) {
+	// 		if (posYr < 350) {posYr = posYr + 50};
+	// 	}
+	// 	else {
+	// 		if (posYr > 0) {posYr = posYr - 50};
+	// 	}
+	// 	elemRo.style.left = posXr + 'px'; 
+	// 	elemRo.style.top = posYr + 'px';
+	// }*/
+
+	var int=setInterval(function(){
+		if (paraR!=true){
+			frame(Xr, Yr, elemRo);
+		}
+		if (paraB!=true){
+			frame(Xb, Yb, elemBl);
+		}
+		if (paraR==true && paraB==true) clearInterval(int);
+	}, 300);
+
+	function frame(posX, posY, elem) {
+		var nRandom = Math.ceil(Math.random() * 4);
+		if (nRandom % 2 == 0) {
+			if (posX < 300) {posX = posX + 50};
+		}
+		else {
+			if (posX > 0) {posX = posX - 50};
+		}
+		if (nRandom > 2 ) {
+			if (posY < 300) {posY = posY + 50};
+		}
+		else {
+			if (posY > 0) {posY = posY - 50};
+		}
+		elem.style.left = posX + 'px'; 
+		elem.style.top = posY + 'px';
+	}
+
+	function pararB(){
+		paraB=true;
+	}
+
+	function pararR(){
+		paraR=true;
+	}
+
+</script>
+
+</body>
+</html>

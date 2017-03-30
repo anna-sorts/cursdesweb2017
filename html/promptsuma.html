@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var suma = 0;
+    var person = 0;
+    
+    do {
+        person = prompt("Please enter a number");
+        
+        if (person != null) {
+            suma = suma + parseInt(person);
+        }
+    }
+    while (person != null);
+    
+    document.getElementById("demo").innerHTML =
+        "La suma és " + suma;
+}
+</script>
+
+</body>
+</html>
+
+

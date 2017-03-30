@@ -7,9 +7,9 @@
 	    width: 400px;
 	    height: 400px;
 	    position: relative;
-	    background: yellow;
+	    background: palegreen;
   }
-	#animate {
+	#animateRo {
 	    width: 50px;
 	    height: 50px;
 	    position: absolute;
@@ -17,42 +17,105 @@
 	    font-size: 0.8em;
 	    background-color: red;
   }
+	#animateBl {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: blue;
+  }
+  	#animateGr {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: yellow;
+  }
 	</style>
 </head>
 
 <body>
 <p>
-  <button onclick="myMove()">Mou-te!</button>
-  
+  <button id="botoRoig" onclick="clearInterval(idR)"> Atura capsa roja</button>
+  <button id="botoBlau" onclick="clearInterval(idB)"> Atura capsa blava</button>
+  <button id="botoGroc" onclick="clearInterval(idG)"> Atura capsa groga</button>
 </p>
 
 <div id ="container">
-  <div id ="animate" onmouseover="myMove()"></div>
+  <!-- <div id ="animate" onmouseover="myMove()"></div> -->
+  <div id ="animateRo"></div>
+  <div id ="animateBl"></div>
+  <div id ="animateGr"></div>
 </div>
 
 <script>
-	var posX = 0;
-	var posY = 0;
-	var elem = document.getElementById("animate"); 
-	function myMove() {
-		var id = setInterval(frame, 300);
-		function frame() {
-			var nRandom = Math.ceil(Math.random() * 4);
-			if (nRandom % 2 == 0) {
-				if (posX < 350) {posX = posX + 50};
-			}
-			else {
-				if (posX > 0) {posX = posX - 50};
-			}
-			if (nRandom > 2 ) {
-				if (posY < 350) {posY = posY + 50};
-			}
-			else {
-				if (posY > 0) {posY = posY - 50};
-			}
-			elem.style.left = posX + 'px'; 
-			elem.style.top = posY + 'px';
+	var posXr = 350;
+	var posYr = 350;
+	var posXb = 0;
+	var posYb = 0;
+	var posXg = 0;
+	var posYg = 0;
+
+	var elemRo = document.getElementById("animateRo");
+	var elemBl = document.getElementById("animateBl"); 
+	var elemGr = document.getElementById("animateGr"); 
+	
+	var idR = setInterval(frameR, 300);
+	var idB = setInterval(frameB, 300);
+	var idG = setInterval(frameG, 300);
+
+	function frameR() {
+		var nRandom = Math.ceil(Math.random() * 4);
+		if (nRandom % 2 == 0) {
+			if (posXr < 350) {posXr = posXr + 50};
 		}
+		else {
+			if (posXr > 0) {posXr = posXr - 50};
+		}
+		if (nRandom > 2 ) {
+			if (posYr < 350) {posYr = posYr + 50};
+		}
+		else {
+			if (posYr > 0) {posYr = posYr - 50};
+		}
+		elemRo.style.left = posXr + 'px'; 
+		elemRo.style.top = posYr + 'px';
+	}
+	function frameB() {
+		var nRandom = Math.ceil(Math.random() * 4);
+		if (nRandom % 2 == 0) {
+			if (posXb < 350) {posXb = posXb + 50};
+		}
+		else {
+			if (posXb > 0) {posXb = posXb - 50};
+		}
+		if (nRandom > 2 ) {
+			if (posYb < 350) {posYb = posYb + 50};
+		}
+		else {
+			if (posYb > 0) {posYb = posYb - 50};
+		}
+		elemBl.style.left = posXb + 'px'; 
+		elemBl.style.top = posYb + 'px';
+	}
+	function frameG() {
+		var nRandom = Math.ceil(Math.random() * 4);
+		if (nRandom % 2 == 0) {
+			if (posXg < 350) {posXg = posXg + 50};
+		}
+		else {
+			if (posXg > 0) {posXg = posXg - 50};
+		}
+		if (nRandom > 2 ) {
+			if (posYg < 350) {posYg = posYg + 50};
+		}
+		else {
+			if (posYg > 0) {posYg = posYg - 50};
+		}
+		elemGr.style.left = posXg + 'px'; 
+		elemGr.style.top = posYg + 'px';
 	}
 
 </script>
