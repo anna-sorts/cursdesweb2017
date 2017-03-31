@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+<table class="w3-table w3-hoverable w3-striped" id="taula"></table>
+
+<script>
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+obj = JSON.parse(text);
+var empleados = "<tr> <th>" + "firstName" + "</th> <th>" + "lastName" + "</th> </tr>";
+for (var i=0; i<3; i++) {
+	empleados = empleados + "<tr> <td>" + obj.employees[i].firstName + "</td> <td>" + obj.employees[i].lastName + "</td> </tr>";
+}
+document.getElementById("taula").innerHTML = empleados;
+</script>
+
+</body>
+</html>

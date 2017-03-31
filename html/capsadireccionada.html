@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Capsa amb moviment aleatori</title>
+	<style>
+	#container {
+	    width: 400px;
+	    height: 400px;
+	    position: relative;
+	    background: palegreen;
+  }
+	#animateRo {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: red;
+  }
+	#animateBl {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: blue;
+  }
+  	#animateGr {
+	    width: 50px;
+	    height: 50px;
+	    position: absolute;
+	    color: white;
+	    font-size: 0.8em;
+	    background-color: yellow;
+  }
+	</style>
+</head>
+
+<body>
+<p>
+  <button id="botoRoig" onclick="clearInterval(idR)"> Atura capsa roja</button>
+<!--   <button id="botoBlau" onclick="clearInterval(idB)"> Atura capsa blava</button>
+  <button id="botoGroc" onclick="clearInterval(idG)"> Atura capsa groga</button> -->
+</p>
+
+<div id ="container">
+  <!-- <div id ="animate" onmouseover="myMove()"></div> -->
+  <div id ="animateRo"></div>
+<!--   <div id ="animateBl"></div>
+  <div id ="animateGr"></div> -->
+</div>
+
+<script>
+var posXr = Math.ceil(Math.random() * 349);
+var posYr = Math.ceil(Math.random() * 349);
+
+function movHoritzontal(argument) {
+
+
+	function frameR(argument) {
+			// body...
+	}	// body...
+}
+function movHoritzInvers(argument) {
+	// body...
+}
+
+
+
+	var elemRo = document.getElementById("animateRo");
+
+	var idR = setInterval(frameR, 300);
+
+	function frameR() {
+		if (posXr == 350) {--posXr}
+		else if (posYr == 350) {--posYr} 
+		else if (posXr == 0) {++posXr}   
+		else {}
+
+
+		elemRo.style.left = posXr + 'px'; 
+		elemRo.style.top = posYr + 'px';
+	}
+
+
+
+</script>
+
+</body>
+</html>
