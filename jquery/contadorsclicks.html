@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	p {
+		font-size: 1.3 em;
+		font-family: calibri;
+	}
+	span {
+		font-weight: bold;
+		font-size: 1.5 em;
+		padding: 3px;
+		color: #0DF;
+		background-color: lightgray;
+	}
+	#demo {
+		font-weight: bold;
+		font-size: 1.6 em;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+<p>If you click on me, I will disappear.<span></span></p>
+<p>Click me away!<span></span></p>
+<p>Click me too!<span></span></p>
+
+<p id="demo"></p>
+
+<script>
+
+$(document).ready(function(){
+	var a = new Array($("p").length).fill(0);
+    var nElem = a.length;
+    var suma = 0;
+    $("p").click(function(){
+    	var indice = $(this).index();
+    	a[indice] = a[indice] + 1;
+    	$("p > span:eq(" + indice + ")").html(a[indice]);
+        
+        for (var k = 0; k < nElem; ++k) {
+        	suma = suma + parseInt(a[k]);
+        }
+        $("#demo").html(suma);
+        suma = 0;
+    });
+});
+</script>
+
+</body>
+</html>
