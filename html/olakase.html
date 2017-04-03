@@ -6,22 +6,32 @@
 	<script src="exemplecookies.js"></script>
 	<title>Document</title>
 </head>
-<body id="cos">
+<body>
 	<div class="w3-container">
 		<div class="w3-panel w3-gray">
-			<h1 id="ola" contenteditable="true" class="w3-opacity">
+			<h1 id="hexColor" contenteditable="true" class="w3-opacity">
 			</h1>	
 		</div>
 	</div>
 	<button id="boto" class="w3-button w3-purple">Purple</button>
+	<input type="color" id="myColor">
 
 	
 	<script>
-
-		document.getElementById('boto').addEvenListener("click",canviarColorPantalla);
+		var elementText = document.getElementById("hexColor"); //així es com s'havia de captar el continght del h1!!
+		elementText.defaultValue = "#F0D";
+		elementText.innerHTML = document.body.style.backgroundColor;
+		document.body.style.backgroundColor = getCookie("colorPantalla"); 
+		
+		document.getElementById('boto').addEventListener("click",canviarColorPantalla);
+		
 		function canviarColorPantalla() {
 			console.log("canviarColorPantalla");
-			document.getElementById('cos').style.backgroundColor = ola.innerHTML;
+			//setCookie("colorPantalla", elementText.innerHTML,0.02);  //guardar cookies, IMPORTANT!! Es passa el nom, el valor, i el nombre de dies
+			//document.body.style.backgroundColor = elementText.innerHTML; //si noposem això, no s'actualitza a la pantalla 
+			var x = document.getElementById("myColor").defaultValue;
+			document.body.style.backgroundColor = x;
+			setCookie("colorPantalla", x, 0.02);
 		}
 	</script>
 </body>
