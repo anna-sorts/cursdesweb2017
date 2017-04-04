@@ -25,17 +25,15 @@
 $(document).ready(function(){
     $("button").click(function(){
         var a = Math.floor(parseInt($("ul li").length/2 + 1));
-        //$("ul li:nth-last-of-type("+ a +")").hide();
         $("ul li:odd").hide();
         $("ul li:even").css("color", "red");
            });
 });
 
-// ​$(document).ready(function(){
+// $(document).ready(function(){
 //     $("button").click(function(){
-//     	var a = Math.floor(parseInt($("ul li").length/2 + 1));
-//          //$("ul li:nth-child(" + a + ")").hide();
-//          $("ul li:odd").hide();
+//      	var a = Math.floor(parseInt($("ul li").length/2 + 1));
+//         $("ul li:odd").hide();
 //     });    
 // });
 </script>

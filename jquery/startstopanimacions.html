@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#start").click(function(){
+        var div1 = $("#div1");
+        var div2 = $("#div2");
+        var div3 = $("#div3");
+        var div4 = $("#div4");
+        div1.animate({left: '300px'}, 3000);
+        div1.animate({fontSize: '1.3em'}, 500);
+        div2.animate({left: '300px'}, 3000);
+        div2.animate({fontSize: '1.3em'}, 500);
+        div3.animate({left: '300px'}, 3000);
+        div3.animate({fontSize: '1.3em'}, 500);
+        div4.animate({left: '300px'}, 3000);
+        div4.animate({fontSize: '1.3em'}, 500);
+    });
+    $("#stop1").click(function(){
+        $("#div1").stop(true, false); //atura totes les animacions, la actual de desplaçament, i la futura de fontSize. No espera a que acabe la actual
+    });
+    $("#stop2").click(function(){
+        $("#div2").stop(false, false); //sols s'atura l'animació activa; no espera a que acabe aquesta, la atura en sec
+    });
+    $("#stop3").click(function(){
+        $("#div3").stop(false, true); //atura sols la animació activa(desplaçament), espera que acabe aquesta per aturar. És a dir, lo únic que passa es q salta directe a la següent.
+    });
+    $("#stop4").click(function(){
+        $("#div4").stop(true, true); //atura totes les funcions, espera que s'acabe la actual per parar.
+    });
+});
+</script> 
+</head>
+<body>
+
+<button id="start">Start Animation</button>
+<button id="stop1">Stop Animation 1</button>
+<button id="stop2">Stop Animation 2</button>
+<button id="stop3">Stop Animation 3</button>
+<button id="stop4">Stop Animation 4</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+<div id="div1" style="background:#98bf21;height:80px;width:150px;position:relative;display:block;">Good Morning</div>
+<div id="div2" style="background:#0BD;height:80px;width:150px;position:relative;display:block;">Good Afternoon</div>
+<div id="div3" style="background:#DF0;height:80px;width:150px;position:relative;display:block;">Good Evening</div>
+<div id="div4" style="background:#F04;height:80px;width:150px;position:relative;display:block;">Good Night</div>
+
+</body>
+</html>

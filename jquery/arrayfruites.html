@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://192.168.175:81/javascript/April04/fruites.json"></script>
+
+ <!-- <script type="text/javascript" src="../fruites.json"></script> -->
+
+</head>
+<body>
+
+<script>
+//var fruites = ["platan", "sindria", "poma", "pressec"];
+var fruites = JSON.parse(data);
+
+do{
+    fruita = prompt("Introduix una fruita");
+    if (fruita != null && fruita.length > 0) {
+    	fruites.push(fruita);
+    }
+}while (fruita != null && fruita.length > 0);
+
+    $("body").append("<ol></ol>");
+    for (var i = 0; i < fruites.length; ++i) {
+		elem = " <li>" + fruites[i]+ "</li> ";
+		$("ol").append(elem);
+		
+	
+		// O, usant el .text :
+		//var element = $("<li></li>");
+		//$("ol").append(element);
+		// element.text(fruites[i]);
+	}
+
+</script>
+</body>
+</html>
