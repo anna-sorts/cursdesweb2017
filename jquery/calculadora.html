@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculadora</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<style>
+		div[class^=num] {
+			width: 100px;
+			padding: 5px;
+			border: 1px block lightgray;
+			border-radius: 3px;
+			margin: 4px;
+			background-color: lightgray;
+		}
+		.btn-group {
+			margin-left: 4px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="big" class="container">
+		<div class="num1" id="ent1" contenteditable="true">Nombre1</div>
+		<div class="num2" id="ent2" contenteditable="true">Nombre2</div>
+		<div class="btn-group btn-group-sm">
+			<button id="suma"  class="btn btn-primary"> + </button>
+			<button id="resta" class="btn btn-primary"> - </button>
+			<button id="prod"  class="btn btn-primary"> * </button>
+			<button id="divi"  class="btn btn-primary"> / </button>
+		</div>
+		<div class="numsort">0</div>
+
+	</div>
+	<script>
+		 $("div[id^=ent]").keypress(function(e){
+			if (e.charCode < 48 || e.charCode > 57) { 
+				return false; // no dixa introduir, no surt res
+			};	
+		});
+
+		$("div[id^=ent]").focus(function() {
+			$(this).text("");
+		});
+
+		$("#suma").click(function() {
+			suma  = parseInt($("#ent1").text()) + parseInt($("#ent2").text());
+			$(".numsort").text(suma);
+		});
+
+		$("#resta").click(function() {
+			resta = parseInt($("#ent1").text()) - parseInt($("#ent2").text());
+			$(".numsort").text(resta);
+		});
+
+		$("#prod").click(function() {
+			prod  = parseInt($("#ent1").text()) * parseInt($("#ent2").text());
+			$(".numsort").text(prod);
+		});
+
+		$("#divi").click(function() {
+			divi  = (parseInt($("#ent1").text()) / parseInt($("#ent2").text())).toFixed(6);
+			$(".numsort").text(divi);
+		})
+
+	</script>
+</body>
+</html>

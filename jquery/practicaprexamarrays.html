@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrais</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+	<div id="a1"></div>
+	<div id="quants"></div>
+	<div id="a2"></div>
+	<div id="hola">
+		<h3>Nombre de caràcters de cada element</h3>
+		<p id="demo"></p>
+		<p id="demo2"></p>
+	</div>
+
+	<script>
+		var nombres = ["uN","dOs", "TREs", "qUaTRe", "cInC"];
+		var numNombres = nombres.length;
+		var aux = nombres.slice();
+		for (var j=0; j < numNombres; ++j) {
+			aux[j] = aux[j].toLowerCase();
+			if (nombres[j] != aux[j]) {
+				$("#a2").after(" <p> L'element " + aux[j] + " contenia majúscules </p> ");
+				alert("ojo, majúscules!");
+			}
+		}
+		aux.sort();
+
+		$("#a1").html(nombres.join(" | "));
+		$("#quants").text("Aquest array compta de " + numNombres + " elements");
+		$("#a2").html(aux.join(" | "));
+		var comptador = 0;
+		for (var i = 0; i < numNombres; ++i) {
+			var nou = nombres[i].length;
+			comptador += nou;
+			$("#demo").append("En la posició " + i + " del array es troba l'element <strong>" + nombres[i] + "</strong> que té " + nou + " caràcters.<br>");
+			$("#demo2").text("El nombre total de caràcters és " + comptador);
+
+		}
+
+		//Com calcular el nº de caracters de cada paraula de l'array
+	</script>
+</body>
+</html>
+
+
