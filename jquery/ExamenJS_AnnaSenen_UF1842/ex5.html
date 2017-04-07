@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercici 5 - Anna Senen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<style>
+		span {
+			color: #808;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<p>El nombre d'elements del array és de: </p> 
+	<span id="sp1"></span> 
+	<p>L'array en ordre alfabètic queda : </p>
+	<span id="sp2"></span>
+	
+
+<script>
+var paisos = ["França", "Espanya", "Italia", "Austria"]; //creem el array amb els 4 paisos
+
+$(document).ready(function() {
+	paisos.sort();  //ordenem alfabèticament el array, tal qual es carrega la pàgina
+	$("#sp1").html(paisos.length);  //mostrem en el primer span el nombre d'elements de l'array
+	$("#sp2").html(paisos.join(", ")); // mostrem en el segon span els elements ordenats alfabèticament, separats per comes.
+})
+</script>
+
+</body>
+</html>

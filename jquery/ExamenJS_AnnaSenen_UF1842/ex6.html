@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercici 6 - Anna Senen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<style>
+		div {
+			padding: 20px;
+			display: inline; 
+		}
+	</style>
+</head>
+<body>
+	<div>#</div>
+	<button>Aleatori</button>
+
+<script>
+	$("button").click(function() { 
+		var aleatori = Math.floor(Math.random() * 10) + 1;
+		$("div").html(aleatori);
+	})
+	// en fer clic element de categoria botó, es genera un nombre aleatori entre 1 i 10, i aquest nombre replaçarà l'anterior en el div.
+
+</script>
+
+</body>
+</html>

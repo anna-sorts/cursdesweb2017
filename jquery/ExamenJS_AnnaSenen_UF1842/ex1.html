@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercici 1 - Anna Senen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+
+<script>
+
+	$(document).ready(function() { //El contingut del script s'executa un cop s'ha acabat de carregar la pàgina.
+		var entrada = prompt("Introdueix un nombre enter"); //s'assigna el contingut del promp a la variable "entrada"
+
+		if (entrada != null ) { //controlem que introduim un nombre vàlid
+			if (entrada % 2 == 0) {  //si el nombre és divisible entre dos (residu és 0), mostrarem "Parell" en un alert, si no ho és, mostrarem "Senar"
+				alert("Parell");
+			} 
+			else {
+				alert("Senar");
+			}
+		}
+	})
+// falta comprobar la entrada: que no entren al prompt nombres decimals o altres caràcters. Sé fer-ho, però no amb un prompt
+</script>
+
+</body>
+</html>

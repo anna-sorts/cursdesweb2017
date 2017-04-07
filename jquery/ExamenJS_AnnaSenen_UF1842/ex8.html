@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercici 8 - Anna Senen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<style>
+		div {
+			background-color: #F00;
+			width: 100px;
+			padding: 20px;
+			display: inline;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>Clica'm!</button>
+
+<script>
+	$(document).ready(function() { 
+		$("body").prepend("<div></div>");  //creem el div amb jQuery, i el situem abans del botó (per tal que quedi a l'esquerra d'aquest). El div apareixerà en carregar-se la pàgina
+	});
+	$("button").click(function() {
+		$("div").toggle();  //Al fer clic al botó, el mètode toggle aplicat al div va alternant entre les propietats show() i hide() (mostrar i amagar), de forma que si està amagat es mostra, i si no ho està l'amaga.
+	})
+</script>
+
+</body>
+</html>

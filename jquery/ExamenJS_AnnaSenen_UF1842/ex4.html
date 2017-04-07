@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercici 4 - Anna Senen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+	<div>
+		<p></p>
+	</div>
+	<button>Modifica el text</button>
+
+<script>
+	var txt = "Javascript és un llenguatge compilat."  //creem una variable string amb el 	contingut solicitat
+	$(document).ready(function() {  //en carregar-se la pàgina, el string apareixerà en el paràgraf p.
+		$("p").text(txt);
+	});
+
+	$("button").click(function() { // al fer clic en el botó, es replaçarà la paraula "compilat" del string per una de diferent.
+		$("p").html(txt.replace("compilat", "interpretat"));
+	})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercici 9 - Anna Senen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<style>
+		div {
+			color: #F00;
+			padding: 20px;
+			margin: 10px;
+		}
+		.color {
+			color: #00F;
+		}
+	</style>
+</head>
+<body>
+	<div>Linia de text de color variant</div>
+	<button>Canvia el color</button>
+
+<script>
+	$("button").click(function() {
+		$("div").toggleClass("color");
+	})
+
+//El color per defecte del text és el vermell. Al clicar el botó es crida una funció que afig al div la classe "color" (que dóna color blau al text) si no la té assignada, i se la treu si la té. 
+</script>
+
+</body>
+</html>

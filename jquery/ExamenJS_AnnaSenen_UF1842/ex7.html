@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercici 7 - Anna Senen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+<h2>Exercici 7</h2>
+
+<script>
+	var nombres = [3, 6, 1, 9, 11, 4, 5]; //creem l'array amb els nombres solicitats
+	$(document).ready(function() { 
+		var senars = [];  //creem un array on emmagatzemarem únicament els nombres senars (no és la única forma de resoldre l'exercici, però és la més ordenada)
+		for (var i = 0; i < nombres.length; ++i) { //iterem l'array per buscar els senars
+			if (nombres[i] % 2 != 0) {
+				senars.push(nombres[i]);  //condicional: si l'element de l'array "nombres" és senar, l'emmagatzemem al array push, per darrera per mantenir l'ordre. Si es parell no es fa res
+				
+			}
+			
+		}
+		var llista = senars.toString(); // convertim el array d'elements senars en un string, i l'assignem a una variable.
+		alert(llista); //mostrem en un alert el string del array
+	})
+
+</script>
+
+</body>
+</html>
