@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="../llistacolors.json"></script>
+<style>
+	.quadrat {
+		float: right;
+		width: 150px;
+		height: 150px;
+		border: 2px solid black;
+	}
+</style>
+<script>
+
+
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").load("demo_test.txt");
+        $("button").attr('value', $(this).load("text_boto.txt"));
+
+       
+    });
+    $("div.quadrat").hover(function(){
+    	$.get("../llistacolors.json", function(data, status) { // llegim el JSON
+        	var nElements = data.length;
+        	var aleatori = Math.floor(Math.random() * nElements) ;  // creem aleatoris
+        	var fonsDiv = data[aleatori];	// creem una variable que guarda un element random d'un array. No cal posar nom al array en el doc json, però ha de tenir el format correcte. Llavors, ja reconeix que és un array, i podem cridar-lo amb data.
+        	console.log(fonsDiv);
+        	$(".quadrat").css("background-color", fonsDiv);
+        });	
+    });
+});
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button value="boton_llamado_boton">Boton inicial</button>
+<div class="quadrat"></div>
+
+</body>
+</html>
