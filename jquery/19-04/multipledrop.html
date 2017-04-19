@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<style>
+span {
+    font-size: 1.5em;
+}
+#div {
+    width: 450px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    background-color: red;
+    
+}   
+#div2 {
+    width: 450px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    background-color: blue;
+    
+}
+#div3 {
+    width: 450px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    background-color: yellow;
+  
+}
+#div4 {
+    width: 450px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    background-color: green;
+    
+}
+</style>
+<script>
+var contador = 0;
+function allowDrop(ev) {
+	console.log("allowDrop");
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    console.log("drag");
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    console.log("drop");
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+
+    if (ev.target.id == "div") { 
+        ev.target.appendChild(document.getElementById(data));
+        ++contador;
+        $("span").text(contador);
+    }
+    else {
+        ev.target.after(document.getElementById(data));
+        ++contador;
+        $("span").text(contador);
+    }
+    
+
+}
+</script>
+</head>
+<body>
+
+<p>Drag the W3Schools image into the rectangle:</p>
+
+<div id="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div><span id="sp1"></span>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><span id="sp2"></span>
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div><span id="sp3"></span>
+<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div><span id="sp4"></span>
+<br>
+<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="100" height="69">
+<img id="drag2" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="100" height="69">
+<img id="drag3" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="100" height="69">
+<img id="drag4" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="100" height="69">
+
+<script>
+    
+</script>
+</body>
+</html>
