@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>	Activitat 2 </title>
+	<style>
+		body {
+			font-family: monospace;
+			font-size: 2em;
+		}
+	
+	</style>
+</head>
+<body>
+	<form action="/action_page.php" method="post">
+		<fieldset>	
+			<legend>Periodo de tiempo o lugar:</legend>
+			<input id="noche" type="radio" name="envio" value="noche" />
+			<label for="noche">De noche</label><br/>
+			<input id="dosdias" type="radio" name="envio" value="twoday" />
+			<label for="dosdias">Dos días</label><br/>
+			<input id="tierra" type="radio" name="envio" value="tierra" />
+			<label for="tierra">Tierra</label><br/>
+		</fieldset>
+		<input type="submit" value="Enviar">
+
+	</form>
+</body>
+</html>
+<!-- Anna Senen Orts - 73391837-X 
+Modificacions realitzades:
+- Modificar la llengua.
+- Afegir el mètode d'enviament POST (més segur, no dona informació sobre les dades introduïdes pel usuari).
+- Afegir un botó submit per poder enviar les dades.
+- Afegir un fieldset amb una llegenda per englobar les dades. 
+NOTA IMPORTANT: la meua primera elecció era crear dos fieldsets, amb llegendes "periodo de tiempo" i "lugar",
+el primer englobaria els dos primers radio buttons i el segon, el darrer input. El problema és que tots els input tenen el mateix nom, així que només es pot escollir un dels tres (així, si escollís un periode de temps, no podria seleccionar lloc, i viceversa). No m'he considerat autoritzada a modificar el nom dels inputs, per això ho he deixat així. En una posició laboral, demanaria més informació per completar la tasca.
+ -->
