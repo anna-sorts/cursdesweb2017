@@ -9,8 +9,8 @@
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $ageErr = $emailErr = $genderErr = $websiteErr = "";
+$name = $age = $email = $gender = $comment = $website =  "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -18,8 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $name = test_input($_POST["name"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) { // lo de dins del match és una expressió regular
       $nameErr = "Only letters and white space allowed"; 
+    }
+  }
+
+  if (empty($_POST["age"])) {
+    $nameErr = "Age is required";
+  } else {
+    $name = test_input($_POST["age"]);
+    // check if the client/user is minor
+    if ($age < 18) { 
+      $ageErr = "You must be of legal age to take part in this form"; 
     }
   }
   
@@ -70,6 +80,9 @@ function test_input($data) {
   Name: <input type="text" name="name">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
+  Age: <input type="number" name="age">
+  <span class="error">* <?php echo $ageErr;?></span>
+  <br><br>
   E-mail: <input type="text" name="email">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
@@ -90,6 +103,8 @@ function test_input($data) {
 echo "<h2>Your Input:</h2>";
 echo $name;
 echo "<br>";
+echo $age;
+echo "<br>";
 echo $email;
 echo "<br>";
 echo $website;
@@ -101,3 +116,4 @@ echo $gender;
 
 </body>
 </html>
+[[[1, 2], [3, 5]], [[4, 4], [1, 8]], [[8, 3], [5, 5]]]
