@@ -29,7 +29,7 @@
 		private $horesTreballades;
 		private $valorHora;
 
-		function __construct($nom, $horesTreballades, $valorHora)
+		function __construct($nom, $horesTreballades, $valorHora = 11)
 		{
 			$this -> nom = $nom;
 			$this->horesTreballades = $horesTreballades;
@@ -38,7 +38,7 @@
 
 		public function calcularSou() 
 		{
-			$this->horesTreballades * $this->valorHora = $this->sou;
+			$this->sou = $this->horesTreballades * $this->valorHora;
 		}
 		
 	}
@@ -47,7 +47,7 @@
 	{
 		private $percentatge;
 		private $utilitats;
-		function __construct($nom, $percentatge, $utilitats)
+		function __construct($nom, $utilitats, $percentatge = 0.1)
 		{
 			$this -> nom = $nom;
 			$this->percentatge = $percentatge;
@@ -56,17 +56,20 @@
 
 		public function calcularSou() 
 		{
-			$this->percentatge * $this->valorHora = $this->sou;
+			$this->sou = $this->percentatge * $this->utilitats;
 		}
 	}
 
-$empleat1 = new Empleat("Joan", 145, 12.50);
-$empleat2 = new Empleat("Maria", 160, 11.00);
-$gerent1  = new Gerent("Paco", 0.10, 15000);
+$empleat1 = new Empleat("Joan", 145);
+$empleat3 = new Empleat("Joan2", 145, 13);
+$empleat2 = new Empleat("Maria", 160);
+$gerent1  = new Gerent("Paco", 21000);
 $empleat1->calcularSou();
 $empleat2->calcularSou();
+$empleat3->calcularSou();
 $gerent1->calcularSou();
 echo $empleat1->imprimir();
+echo $empleat3->imprimir();
 echo $empleat2->imprimir();
 echo $gerent1->imprimir();
  ?>
