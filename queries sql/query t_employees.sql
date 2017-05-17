@@ -1,0 +1,86 @@
+select * from t_offices;
+update t_offices
+set
+	OFFC_CITY = 'Valladolid',
+    OFFC_DESCRIPTION = 'Colabora con Everis'
+where 
+	OFFC_ID = 12;
+
+SET SQL_SAFE_UPDATES = 0;
+
+delete from t_offices
+where OFFC_ID = 30;
+
+update t_offices
+set
+	    OFFC_DESCRIPTION = 'Oficina principal de Chile'
+where 
+	OFFC_ID = 20;
+
+select OFFC_ID, OFFC_COUNTRY, OFFC_CITY
+from t_offices
+where OFFC_DESCRIPTION like '%Oficina%';
+
+INSERT INTO T_OFFICES
+( 
+	OFFC_ID, 
+    OFFC_COUNTRY, 
+    OFFC_CITY 
+)
+VALUES
+( 
+	30, 
+    'Argentina', 
+    'Buenos Aires' 
+);
+
+CREATE TABLE `T_KNOWLEDGE_LINES` (
+	`KNLN_ID` INT(11) NOT NULL,
+	`KNLN_NAME` VARCHAR(45) NOT NULL,
+	PRIMARY KEY (`KNLN_ID`)
+);
+INSERT INTO `T_KNOWLEDGE_LINES` (`KNLN_ID`, `KNLN_NAME`)
+VALUES (10, 'Java');
+INSERT INTO `T_KNOWLEDGE_LINES` (`KNLN_ID`, `KNLN_NAME`)
+VALUES (20, '.NET');
+INSERT INTO `T_KNOWLEDGE_LINES` (`KNLN_ID`, `KNLN_NAME`)
+VALUES (30, 'Mainframe');
+select * from t_kno wledge_lines;
+
+ALTER TABLE `T_OFFICES`
+ADD PRIMARY KEY (`OFFC_ID`);
+
+CREATE TABLE `T_EMPLOYEES` (
+	`EMPL_ID` INT NOT NULL AUTO_INCREMENT,
+	`OFFC_ID` INT NOT NULL,
+	`KNLN_ID` INT,
+	`EMPL_FORNAME` VARCHAR(50) NOT NULL,
+	`EMPL_MIDDLE_NAME` VARCHAR(50),
+	`EMPL_SURNAME` VARCHAR(50) NOT NULL,
+	`EMPL_NUMBER` INT NOT NULL,
+	`EMPL_HIRE_DATE` DATETIME NOT NULL,
+	`EMPL_MENTOR_ID` INT,
+PRIMARY KEY (EMPL_ID));
+
+INSERT INTO T_EMPLOYEES 
+(
+	OFFC_ID, KNLN_ID, EMPL_FORNAME, EMPL_SURNAME, EMPL_NUMBER, EMPL_HIRE_DATE
+)
+VALUES
+(
+	10, 10, 'Juan', 'Perez', 150, 20050415
+);
+
+select * from T_EMPLOYEES;
+
+
+
+
+
+
+
+
+
+
+
+
